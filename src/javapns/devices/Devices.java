@@ -2,16 +2,16 @@ package javapns.devices;
 
 import java.util.*;
 
-import org.apache.log4j.*;
-
 import javapns.devices.implementations.basic.*;
 import javapns.notification.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Devices {
 
 	private static final int UNEFFICIENCY_THRESHOLD = 500;
 
-	public static final Logger logger = Logger.getLogger(Devices.class);
+	public static final Logger logger = LoggerFactory.getLogger(Devices.class);
 
 
 	@SuppressWarnings("unchecked")

@@ -29,9 +29,6 @@ public class SpecificNotificationTests extends TestFoundation {
 		/* Verify that the test is being invoked  */
 		if (!verifyCorrectUsage(NotificationTest.class, args, "keystore-path", "keystore-password", "device-token", "[production|sandbox]", "[test-name]")) return;
 
-		/* Initialize Log4j to print logs to console */
-		configureBasicLogging();
-
 		/* Push an alert */
 		runTest(args);
 	}
@@ -77,7 +74,7 @@ public class SpecificNotificationTests extends TestFoundation {
 			System.out.println("");
 			System.out.println("TESTING 257-BYTES PAYLOAD WITH SIZE ESTIMATION ENABLED");
 			/* Expected result: PayloadMaxSizeProbablyExceededException when the alert is added to the payload */
-			pushSpecificPayloadSize(keystore, password, token, production, true, 257);
+			pushSpecificPayloadSize(keystore, password, token, production, true, 2049);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -85,7 +82,7 @@ public class SpecificNotificationTests extends TestFoundation {
 			System.out.println("");
 			System.out.println("TESTING 257-BYTES PAYLOAD WITH SIZE ESTIMATION DISABLED");
 			/* Expected result: PayloadMaxSizeExceededException when the payload is pushed */
-			pushSpecificPayloadSize(keystore, password, token, production, false, 257);
+			pushSpecificPayloadSize(keystore, password, token, production, false, 2049);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -93,7 +90,7 @@ public class SpecificNotificationTests extends TestFoundation {
 			System.out.println("");
 			System.out.println("TESTING 256-BYTES PAYLOAD");
 			/* Expected result: no exception */
-			pushSpecificPayloadSize(keystore, password, token, production, false, 256);
+			pushSpecificPayloadSize(keystore, password, token, production, false, 2048);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

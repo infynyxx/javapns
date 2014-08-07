@@ -3,8 +3,6 @@ package javapns.test;
 import javapns.communication.*;
 import javapns.notification.*;
 
-import org.apache.log4j.*;
-
 class TestFoundation {
 
 	static boolean verifyCorrectUsage(Class testClass, String[] argsProvided, String... argsRequired) {
@@ -48,16 +46,6 @@ class TestFoundation {
 		return numberOfArgsRequired;
 	}
 
-
-	/**
-	 * Enable Log4J with a basic default configuration (console only).
-	 */
-	public static void configureBasicLogging() {
-		try {
-			BasicConfigurator.configure();
-		} catch (Exception e) {
-		}
-	}
 
 
 	/**

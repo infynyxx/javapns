@@ -1,11 +1,11 @@
 package javapns.notification;
 
-import java.util.*;
-
 import javapns.json.*;
 import javapns.notification.exceptions.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import org.apache.log4j.*;
+import java.util.List;
 
 /**
  * Abstract class representing a payload that can be transmitted to Apple.
@@ -22,7 +22,7 @@ public abstract class Payload {
 	/* Character encoding specified by Apple documentation */
 	private static final String DEFAULT_CHARACTER_ENCODING = "UTF-8";
 
-	protected static final Logger logger = Logger.getLogger(Payload.class);
+	protected static final Logger logger = LoggerFactory.getLogger(Payload.class);
 
 	/* The root Payload */
 	private JSONObject payload;

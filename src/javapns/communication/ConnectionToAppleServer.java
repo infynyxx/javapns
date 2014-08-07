@@ -8,8 +8,9 @@ import javapns.communication.exceptions.*;
 
 import javax.net.ssl.*;
 
-import org.apache.log4j.*;
 import org.bouncycastle.jce.provider.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * <h1>Class representing an abstract connection to an Apple server</h1>
@@ -21,7 +22,7 @@ import org.bouncycastle.jce.provider.*;
  */
 public abstract class ConnectionToAppleServer {
 
-	protected static final Logger logger = Logger.getLogger(ConnectionToAppleServer.class);
+	protected static final Logger logger = LoggerFactory.getLogger(ConnectionToAppleServer.class);
 
 	/* The algorithm used by KeyManagerFactory */
 	private static final String ALGORITHM = ((KeyManagerFactory.getDefaultAlgorithm() == null) ? "sunx509" : KeyManagerFactory.getDefaultAlgorithm());

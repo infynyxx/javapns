@@ -5,14 +5,14 @@
     	A Java implementation of the Apple Push Notification Service.
 	</description>
 
-	<property name="java.target" value="1.5" />
+	<property name="java.target" value="1.7" />
 
 	<!-- javapns version id (no spaces allowed!) -->
 	<property name="javapns.name" value="JavaPNS" />
-	<property name="javapns.level" value="2.3" />
+	<property name="javapns.level" value="2.4" />
 	
 	<!-- status examples:  _Beta_1  _Alpha_1 -->
-	<property name="javapns.status" value="_Beta_2" />
+	<property name="javapns.status" value="" />
 	<property name="javapns.revision" value=" r000" />
 	
 	<property name="javapns.version" value="${javapns.level}${javapns.status}" />
@@ -74,19 +74,6 @@
 		</jar>
 	</target>
 
-	<target name="doc" description="Generate the javadocs">
-		<javadoc sourcepath="${src}" destdir="${javadoc}" classpathref="libpath" overview="src/javapns/overview.html" access="public" link="http://download.oracle.com/javase/1.5.0/docs/api" />
-		<zip destfile="${doc.zip}" basedir="${doc}" comment="${javapns.name} ${javapns.version}${javapns.revision}" />
-	</target>
-
-    <target name="javadocpack" depends="doc" description="Package the javadoc for Maven">
-        <!-- build the sources artifact -->
-        <!-- build the javadoc artifact -->
-        <jar jarfile="${javadoc.jar}">
-            <fileset dir="${javadoc}" />
-        </jar>
-    </target>
-
     <target name="source" depends="build" description="generate the source">
         <!-- build the sources artifact -->
         <jar jarfile="${sources.jar}">
@@ -101,9 +88,9 @@
 		</zip>
 	</target>
 
-	<target name="dist" depends="jar,doc,combine" />
+	<target name="dist" depends="jar,combine" />
 	
-	<target name="dist_maven" depends="dist,source,javadocpack" />
+	<target name="dist_maven" depends="dist,source" />
 	
     <target name="deploy" depends="dist_maven" description="deploy snapshot version to Maven snapshot repository">
         <artifact:mvn>

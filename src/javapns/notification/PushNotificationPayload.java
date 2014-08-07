@@ -15,7 +15,7 @@ import javapns.notification.exceptions.*;
 public class PushNotificationPayload extends Payload {
 
 	/* Maximum total length (serialized) of a payload */
-	private static final int MAXIMUM_PAYLOAD_LENGTH = 256;
+	private static final int MAXIMUM_PAYLOAD_LENGTH = 2048;
 
 
 	/**
@@ -349,9 +349,9 @@ public class PushNotificationPayload extends Payload {
 
 	/**
 	 * Return the maximum payload size in bytes.
-	 * For APNS payloads, this method returns 256.
+	 * For APNS payloads, this method returns 2048.
 	 * 
-	 * @return the maximum payload size in bytes (256)
+	 * @return the maximum payload size in bytes (2048)
 	 */
 	@Override
 	public int getMaximumPayloadSize() {

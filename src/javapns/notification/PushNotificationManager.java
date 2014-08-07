@@ -17,7 +17,8 @@ import javapns.notification.exceptions.*;
 import javax.net.ssl.*;
 import javax.security.cert.X509Certificate;
 
-import org.apache.log4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * The main class used to send notification and handle a connection to Apple SSLServerSocket.
@@ -37,7 +38,7 @@ public class PushNotificationManager {
 	 */
 	private int sslSocketTimeout = 30 * 1000;
 
-	static final Logger logger = Logger.getLogger(PushNotificationManager.class);
+	static final Logger logger = LoggerFactory.getLogger(PushNotificationManager.class);
 
 	/* Default retries for a connection */
 	private static final int DEFAULT_RETRIES = 3;
@@ -790,7 +791,7 @@ public class PushNotificationManager {
 
 		/* Device token (shortened), Identifier and expiry */
 		int l = useEnhancedNotificationFormat ? 4 : 8;
-		alert.append("" + deviceToken.substring(0, l) + "É" + deviceToken.substring(64 - l, 64) + (useEnhancedNotificationFormat ? " [Id:" + identifier + "] " + (payload.getExpiry() <= 0 ? "No-store" : "Exp:T+" + payload.getExpiry()) : "") + "\n");
+		alert.append("" + deviceToken.substring(0, l) + "Ã‰" + deviceToken.substring(64 - l, 64) + (useEnhancedNotificationFormat ? " [Id:" + identifier + "] " + (payload.getExpiry() <= 0 ? "No-store" : "Exp:T+" + payload.getExpiry()) : "") + "\n");
 
 		/* Format & encoding */
 		alert.append((useEnhancedNotificationFormat ? "Enhanced" : "Simple") + " format / " + payload.getCharacterEncoding() + "" + "");

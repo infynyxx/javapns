@@ -38,9 +38,6 @@ public class NotificationTest extends TestFoundation {
 		/* Verify that the test is being invoked  */
 		if (!verifyCorrectUsage(NotificationTest.class, args, "keystore-path", "keystore-password", "device-token", "[production|sandbox]", "[complex|simple|threads]", "[#devices]", "[#threads]")) return;
 
-		/* Initialize Log4j to print logs to console */
-		configureBasicLogging();
-
 		/* Push an alert */
 		try {
 			pushTest(args);

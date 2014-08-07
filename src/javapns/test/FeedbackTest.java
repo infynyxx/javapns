@@ -27,9 +27,6 @@ public class FeedbackTest extends TestFoundation {
 		/* Verify that the test is being invoked  */
 		if (!verifyCorrectUsage(FeedbackTest.class, args, "keystore-path", "keystore-password", "[production|sandbox]")) return;
 
-		/* Initialize Log4j to print logs to console */
-		configureBasicLogging();
-
 		/* Get a list of inactive devices */
 		feedbackTest(args);
 	}

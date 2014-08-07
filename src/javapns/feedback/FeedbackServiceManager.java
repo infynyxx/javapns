@@ -7,10 +7,10 @@ import java.util.*;
 import javapns.communication.exceptions.*;
 import javapns.devices.*;
 import javapns.devices.implementations.basic.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.net.ssl.*;
-
-import org.apache.log4j.*;
 
 /**
  * Class for interacting with a specific Feedback Service. 
@@ -20,7 +20,7 @@ import org.apache.log4j.*;
  */
 public class FeedbackServiceManager {
 
-	protected static final Logger logger = Logger.getLogger(FeedbackServiceManager.class);
+	protected static final Logger logger = LoggerFactory.getLogger(FeedbackServiceManager.class);
 
 	/* Length of the tuple sent by Apple */
 	private static final int FEEDBACK_TUPLE_SIZE = 38;
