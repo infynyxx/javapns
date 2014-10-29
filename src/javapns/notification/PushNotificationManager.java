@@ -720,7 +720,7 @@ public class PushNotificationManager {
 	}
 
 
-	Socket getActiveSocket() {
+	public Socket getActiveSocket() {
 		return socket;
 	}
 
