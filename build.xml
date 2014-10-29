@@ -9,7 +9,7 @@
 
 	<!-- javapns version id (no spaces allowed!) -->
 	<property name="javapns.name" value="JavaPNS" />
-	<property name="javapns.level" value="2.4" />
+	<property name="javapns.level" value="2.5" />
 	
 	<!-- status examples:  _Beta_1  _Alpha_1 -->
 	<property name="javapns.status" value="" />
